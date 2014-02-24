@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 你好，世界
+title: RequireJS笔记
 ---
 
 # RequireJS #
