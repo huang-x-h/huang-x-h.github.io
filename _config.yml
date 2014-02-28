@@ -1,2 +1,3 @@
-markdown: rdiscount
+name: Huang's Blog Site
+markdown: redcarpet
 pygments: true

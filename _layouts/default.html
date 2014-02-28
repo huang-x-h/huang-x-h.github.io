@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="huangxinghui" />
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-</head>
-<body>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
 
-<div class="site">
-  <div class="title">
-    <a href="/">My Blog</a>
-    <a class="extra" href="/">记录生活点滴</a>
-  </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        &copy;2014 Huang XingHui huang.x.hui@gmail.com
-      </p>
-    </div>
-  </div>
-</div>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
 
-<a href="http://github.com/huang-x-h"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+    </head>
+    <body>
 
-</body>
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <a class="extra" href="/">主页</a>
+          </div>
+
+          {{ content }}
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Huang XingHui<br />
+                码农一枚<br />
+                huang.x.hui@gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/huang-x-h">github.com/huang-x-h</a><br />
+                <a href="http://weibo.com/1749887314">@珍惜和爱护</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
 </html>

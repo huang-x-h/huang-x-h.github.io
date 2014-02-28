@@ -1,9 +1,15 @@
 ---
 layout: default
 title: RequireJS笔记
+date: 2014-02-20
+categories: javascript
+tags: requirejs
 ---
 
 # RequireJS #
+
+----------
+
 
 RequireJS采用模块化定义,避免全局变量,实现[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)(Asynchronous Module Definition)异步模块加载
 
@@ -62,6 +68,9 @@ RequireJS模块定义
 
 # RequireJS语法 #
 
+----------
+
+
 三个全局函数`requirejs`,`require`,`define`; `requirejs`等同于`require`
 
 - `requirejs`函数定义
@@ -108,6 +117,9 @@ RequireJS模块定义
 
 # RequireJS配置 #
 
+----------
+
+
 - `data-main` 属性，定义RequireJS启动脚本，main.js是**异步加载**
 
     `<script data-main="scripts/main.js" src="scripts/require.js"></script>`
@@ -148,7 +160,7 @@ RequireJS模块定义
 
 - `shim` 垫片针对没有使用AMD规范编写的脚本进行配置依赖关系、导出和加载初始化。它是一个权宜之策用于非模块代码，推荐还是模块化的好。[example-jquery-shim](https://github.com/requirejs/example-jquery-shim)
 
-- `map` 映射，根据模块id配置加载不同模块文件。只能用于全路径模块id，相对路径(`../some/thing`)则是无效的。[示例](http://localhost:3000/map.html)
+- `map` 映射，根据模块id配置加载不同模块文件。只能用于全路径模块id，相对路径(`../some/thing`)则是无效的。
 
 		requirejs.config({
 		  'map': {
@@ -188,6 +200,9 @@ RequireJS模块定义
 
 # RequireJS异常处理 #
 
+----------
+
+
 - [`require([])`异常处理](http://requirejs.org/docs/api.html#errbacks)
 
 		require(['jquery'], function ($) {
@@ -225,6 +240,9 @@ RequireJS模块定义
 
 # RequireJS插件 #
 
+----------
+
+
 RequireJS允许通过一系列插件来实现加载不同类型资源，常用的比如`text!`文本插件和`i18n!`国际化插件。[plugins list](https://github.com/jrburke/requirejs/wiki/Plugins)
 
 通过在模块名称`!`前指定插件名称 `plugin!resource`，如：
@@ -245,6 +263,9 @@ RequireJS允许通过一系列插件来实现加载不同类型资源，常用�
 插件开发可参考[http://requirejs.org/docs/plugins.html](http://requirejs.org/docs/plugins.html)
 
 # RequireJS优化 #
+
+----------
+
 
 [`optimizer`](http://requirejs.org/docs/optimization.html)优化工具能做如下内容
 
