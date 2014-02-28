@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: RequireJS笔记
 date: 2014-02-20
 categories: javascript
@@ -22,8 +22,8 @@ CommonJS模块定义
 	define(function(require, exports, module) {
 	  //Put traditional CommonJS module content here
 	  var someModule = require("someModule");
-	  var anotherModule = require("anotherModule");    
-	
+	  var anotherModule = require("anotherModule");
+
 	  exports.asplode = function() {
 	    someModule.doTehAwesome();
 	    anotherModule.doMoarAwesome();
