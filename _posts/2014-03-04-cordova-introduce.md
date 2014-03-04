@@ -18,7 +18,7 @@ tags: android cordova
 
 ![](/images/posts/anthome.png)
 
-- 设置PATH指定安装Android SDK目录，如图
+- 设置PATH指定安装Android SDK目录，如图(Android SDK下载地址[https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html))
 
 ![](/images/posts/path.png)
 
