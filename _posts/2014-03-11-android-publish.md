@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Window下Cordova构建Android应用发布
-date: 2014-03-12 22:29:13
+date: 2014-03-11 22:29:13
 categories: android
 tags: android cordova
 ---
