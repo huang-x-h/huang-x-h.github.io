@@ -77,7 +77,7 @@ iOS平台相同分为iPhone/iPod和iPad，启动图片定义如下：
 
 最后为了更好的用户体验，应用页面应该添加监听`deviceready`事件调用`navigator.splashscreen.hide()`来移除启动画面。需要安装`SplashScreen`插件才可以进行调用
 
-	cordova plugin add org.apahce.cordova.splashscreen
+	cordova plugin add org.apache.cordova.splashscreen
 
 > 参考链接：
 > 
