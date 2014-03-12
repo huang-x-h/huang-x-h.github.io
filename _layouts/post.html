@@ -9,17 +9,14 @@ layout: default
 </div>
 
 {% if page.comments %}
-<div id="comments">
-  <h2>评论</h2>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_shortname = 'dormouse';
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'dormouse';
 
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-</div>
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 {% endif %}

@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Window下Cordova构建Android开发
 date: 2014-03-04 22:29:13
 categories: android
