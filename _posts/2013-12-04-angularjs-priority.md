@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: AngularJS指令优先级
 date: 2013-12-04 14:07:13
 categories: javascript
