@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: Cordova开发设置应用图标和启动画面
 date: 2014-03-12 22:29:13
-categories: android
+categories: cordova
 tags: android cordova
 ---
 

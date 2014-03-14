@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: Window下Cordova构建Android开发
 date: 2014-03-04 22:29:13
+last_modify_date: 2014-03-13 14:22:31 
 categories: android
 tags: android cordova
 ---
@@ -48,6 +49,64 @@ tags: android cordova
 第二个参数 `com.example.hello` 提供工程包名结构（反向域名风格），可选，默认是  `io.cordova.hellocordova`
 
 第三个参数 `HelloWorld` 指定应用显示名称，可选，默认是 `HelloCordova`
+
+工程创建成功时，工程目录结构如下：
+
+	myApp/
+	|-- config.xml
+	|-- hooks/
+	|-- merges/
+	| | |-- android/
+	| | |-- blackberry10/
+	| | `-- ios/
+	|-- www/
+	|-- platforms/
+	| |-- android/
+	| |-- blackberry10/
+	| `-- ios/
+	`-- plugins/
+
+- `hooks` 用于存放工程自定义执行脚本
+- `merges` 该目录下的文件根据不同平台覆盖`www`里的内容，示例
+
+		merges/
+		|-- ios/
+		| `-- app.js
+		|-- android/
+		| `-- android.js
+		www/
+		`-- app.js
+
+- `www` 用于存放工程web应用内容，包含html/css/js等，在cordova的prepare阶段会拷贝到各个平台的www目录
+- `platforms` 应用包含的平台本地应用目录
+- `plugins` cordova插件目录
+- `config.xml` 工程配置文件，原生模板文件内容如下：
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<widget xmlns     = "http://www.w3.org/ns/widgets"
+		        xmlns:cdv = "http://cordova.apache.org/ns/1.0"
+		        id        = "io.cordova.hellocordova"
+		        version   = "0.0.1">
+		    <name>Hello Cordova</name>
+		
+		    <description>
+		        A sample Apache Cordova application that responds to the deviceready event.
+		    </description>
+		
+		    <author href="http://cordova.io" email="dev@cordova.apache.org">
+		        Apache Cordova Team
+		    </author>
+		
+		    <content src="index.html" />
+		
+		    <access origin="*" />
+		</widget>
+
+	`name` 表示用户看到应用的名称
+
+	`content` 应用启示页面
+
+	`preference` 定义一些特性，比如常用的全屏 `<preference name="fullscreen" value="true" />`
 
 ## 添加平台 ##
 
@@ -103,6 +162,8 @@ tags: android cordova
 
 
 > 参考文档：
+> 
+> [cordova-cli](https://github.com/apache/cordova-cli)
 > 
 > [http://cordova.apache.org/docs/en/3.4.0/index.html](http://cordova.apache.org/docs/en/3.4.0/index.html)
 >  
