@@ -1,4 +1,6 @@
 name: Huang's Blog Site
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
 pygments: true
 permalink: /blog/:year/:month/:day/:title
