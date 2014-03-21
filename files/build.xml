@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Flex Compile" default="compile.app" basedir=".">
+	<description>Flex Compile</description>
+	
+ 	<!-- Set Parameters -->
+	<property file="build.properties" />
+
+	<!-- Definitions $ References -->
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+	
+	<target name="compile.app">
+		<mxmlc file="${project.src.dir}/LittleBean.mxml"
+			output="${project.release.dir}/LittleBean.swf"
+			actionscript-file-encoding="UTF-8" 
+			debug="false" fork="true">
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml" />
+			<source-path path-element="${project.src.dir}" />
+			<external-library-path dir="${FLEX_HOME}/frameworks/libs">                 
+				<include name="datavisualization.swc" />
+				<include name="framework.swc" />
+				<include name="rpc.swc" />                 
+			</external-library-path>
+			<library-path dir="${project.libs.dir}" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<include-libraries dir="${project.libs.dir}">
+				<include name="*.swc" />
+			</include-libraries>
+			<jvmarg line="${mxmlc.jvm.args}"/>
+		</mxmlc>
+	</target>
+
+	<target name="compile.library" description="build library">
+		<compc output="${library.release.dir}/${library.name}.swc"
+			fork="true" debug="false" warn-no-constructor="false">
+			<namespace uri="library://ns.littlebean.com/flex/littlebean" manifest="${library.src.dir}/manifest.xml" />
+			<include-namespaces uri="library://ns.littlebean.com/flex/littlebean" />
+			<source-path path-element="${library.src.dir}" />
+			<external-library-path dir="${FLEX_HOME}/frameworks/libs">
+				<include name="player/9/playerglobal.swc" />
+				<include name="datavisualization.swc" />
+				<include name="framework.swc" />
+				<include name="rpc.swc" />
+				<include name="utilities.swc" />
+			</external-library-path>
+			<keep-as3-metadata name="Bindable" />
+			<keep-as3-metadata name="Managed" />
+			<keep-as3-metadata name="ChangeEvent" />
+			<keep-as3-metadata name="NonCommittingChangeEvent" />
+			<keep-as3-metadata name="Transient" />
+			<jvmarg line="${compc.jvm.args}" />
+		</compc>
+	</target>
+	
+	<target name="compile.asdoc">
+		<exec executable="${asdoc.exe}" failonerror="true">
+	        <arg line="-output ${asdoc.release}" />
+			<arg line="-source-path ${library.src.dir}"/>
+			<arg line="-doc-sources ${library.src.dir}"/>
+			<arg line="-main-title ${asdoc.title}" />
+	        <arg line="-footer ${asdoc.footer}" />
+		</exec>
+	</target>
+</project>
