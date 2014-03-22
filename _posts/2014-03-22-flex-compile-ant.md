@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: Flex使用Ant编译介绍
 date: 2014-03-22 00:04:29 
-last_modify_date: 2014-03-22 00:04:37 
+last_modify_date: 2014-03-22 16:42:40 
 categories: flex
 tags: flex
 ---
@@ -170,7 +170,7 @@ Flex编译除了使用Flash Builder或者Flash Developer等IDE工具编译之外
 	- `<include-namespaces uri="library://ns.littlebean.com/flex/littlebean" />` 指定编译生成的swc包含相应命名空间
 	- `keep-as3-metadata` 指定所需要的元素据。相应元素据介绍参看[About MetaData](http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf680e1-7ffe.html)
 
-## 编译文档 ##
+## 编译文档(asdoc) ##
 
 一般在开发类库时，都会在代码中写注释。Flex提供`asdoc`命令来生成注释文档
 
