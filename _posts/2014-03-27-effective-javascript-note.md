@@ -11,21 +11,18 @@ tags: javascript
 1. 启用严格模式，`use strict` 指令只有在脚本或函数的顶部才能生效。
 
 	示例一：
-	```javascript
-	// file1.js
-	"use strict";
-	function f() {
-	  // ...
-	}
-	```
-	
+
+		// file1.js
+		"use strict";
+		function f() {
+		  // ...
+		}
 	示例二：
-	```javascript
-	function f(x) {
-	  "use strict";
-	  // ...
-	}
-	```
+
+		function f(x) {
+		  "use strict";
+		  // ...
+		}
 2. 理解JavaScript的浮点数
 	- JavaScript的数字都是双精度的浮点数
 	- 整数仅仅是浮点数的一个子集，而不是一个单独的数据类型
@@ -33,23 +30,47 @@ tags: javascript
 	- 当心浮点运算中的精度陷进
 
 	示例一：
-	```javascript
-	(0.1 + 0.2) + 0.3; // 0.6000000000000001
-	0.1 + (0.2 + 0.3); // 0.6
-	```
+
+		(0.1 + 0.2) + 0.3; // 0.6000000000000001
+		0.1 + (0.2 + 0.3); // 0.6
 3. 当心隐式的强制转换
 	- 对象通过valueOf方法强制转换为数字，通过toString方法强制转换为字符串
 	- 判断一个值是否为定义，应该使用typeof或undefined进行比较而不是使用真值运算
 4. 原始类型优于封装对象
 	- JavaScript有5个原始类型：Boolean，Number，String，null和undefined
 5. 避免对混合类型使用 `==` 运算符
-	 参数类型1 | 参数类型2 | 强制转换
-	 -------- | -------- | -------
-	 null | undefined | 不转换，总是返回true |
-	 null或undefined | 其他非null或undefined的类型 | 不转换，总是返回true
-	 原始类型：String、Number或Boolean | Date对象 | 将原始类型转换为数字；将Date对象转换为原始类型（优先尝试toString方法，在尝试valueOf方法）
-	 原始类型：String、Number或Boolean | 非Date对象 | 将原始类型转换为数字；将非Date对象转换为原始类型（优先尝试valueOf方法，在尝试toString方法）
-	 原始类型：String、Number或Boolean | 原始类型：String、Number或Boolean | 将原始类型转换为数字
+	<table>
+	  <thead>
+		<td>参数类型1</td>
+		<td>参数类型2</td>
+		<td>强制转换</td>
+	  </thead>
+	  <tr>
+		<td>null</td>
+		<td>undefined</td>
+		<td>不转换，总是返回true</td>
+	  </tr>
+	  <tr>
+		<td>null或undefined</td>
+		<td>其他非null或undefined的类型</td>
+		<td>不转换，总是返回true</td>
+	  </tr>
+	  <tr>
+		<td>原始类型：String、Number或Boolean</td>
+		<td>Date对象</td>
+		<td>将原始类型转换为数字；将Date对象转换为原始类型（优先尝试toString方法，在尝试valueOf方法）</td>
+	  </tr>
+	  <tr>
+		<td>原始类型：String、Number或Boolean</td>
+		<td>非Date对象</td>
+		<td>将原始类型转换为数字；将非Date对象转换为原始类型（优先尝试valueOf方法，在尝试toString方法）</td>
+	  </tr>
+	  <tr>
+		<td>原始类型：String、Number或Boolean</td>
+		<td>原始类型：String、Number或Boolean </td>
+		<td>将原始类型转换为数字</td>
+	  </tr>
+	</table>
 6. 了解分号插入的局限
 	- 仅在 `}` 标记之前、一行的结束和程序的结束处推倒分号
 	- 仅在紧接着的标记不能被解析的时候推倒分号
@@ -87,15 +108,14 @@ tags: javascript
 	- 当一个函数期望使用`new`操作符调用时，清晰地文档化该函数
 	
 	示例一：
-	```javascript
-	function User(name, passwordHash) {
-	  var self = this instanceof User ? this : Object.create(User.prototype);
-	  self.name = name;
-	  self.passwordHash = passwordHash;
-	
-	  return self;
-	}
-	```
+
+		function User(name, passwordHash) {
+		  var self = this instanceof User ? this : Object.create(User.prototype);
+		  self.name = name;
+		  self.passwordHash = passwordHash;
+		
+		  return self;
+		}
 19. 在原型中存储方法
 	- 将方法存储在原型中优于存储在实例对象中
 	- 将可变的实例状态存储在示例对象中
@@ -108,14 +128,13 @@ tags: javascript
 	- 使用`Object.create`函数来构造子类的原型对象以避免调用弗雷的构造函数
 	
 	示例一：
-	```javascript
-	function SpaceShip(scence, x, y) {
-	  Actor.call(this, scence, x, y);
-	  this.points = 0;
-	}
-
-	SpaceShip.prototype = Object.create(Actor.prototype);
-	```
+	
+		function SpaceShip(scence, x, y) {
+		  Actor.call(this, scence, x, y);
+		  this.points = 0;
+		}
+	
+		SpaceShip.prototype = Object.create(Actor.prototype);
 23. 不要重用父类的属性名
 24. 避免继承基础类
 25. 使用`Object`的直接实例构造轻量级的字典
@@ -128,32 +147,29 @@ tags: javascript
 		- `length`属性大于该对象的最大索引。索引是一个范围在0到2^32-2的整数，它的字符串表示的是该对象中的一个key
 		
 	示例一：
-	```javascript
-	var result = Array.prototype.map.call('abc', function(s) {
-	  return s.toUpperCase();
-	}); // ['A', 'B', 'C]
-	```
+
+		var result = Array.prototype.map.call('abc', function(s) {
+		  return s.toUpperCase();
+		}); // ['A', 'B', 'C]
 29. 对异步循环使用递归
 	- 循环不能是一部的
 	- 使用递归函数在事件循环的单独轮次中执行迭代
 	- 在时间循环的单独轮次中执行递归，并不会导致调用堆栈溢出
 	 
 	示例一：
-	```javascript
-	// 接收一个URL的数组并尝试一次下载每个文件直到有一个文件被成功下载
-	function downloadOneAsync(urls, onsuccess, onfailure) {
-	  var n = urls.length;
-
-	  function tryNextURL(i) {
-		if (i >= n) {
-		  onfailure('all downloads failed');
-		  return;
+		// 接收一个URL的数组并尝试一次下载每个文件直到有一个文件被成功下载
+		function downloadOneAsync(urls, onsuccess, onfailure) {
+		  var n = urls.length;
+	
+		  function tryNextURL(i) {
+			if (i >= n) {
+			  onfailure('all downloads failed');
+			  return;
+			}
+			downloadAsync(urls[i], onsuccess, function() {
+			  tryNextURL(i + 1);
+			});
+		  }
+	
+		  tryNextURL(0);
 		}
-		downloadAsync(urls[i], onsuccess, function() {
-		  tryNextURL(i + 1);
-		});
-	  }
-
-	  tryNextURL(0);
-	}
-	```
