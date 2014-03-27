@@ -17,6 +17,7 @@ tags: javascript
 		function f() {
 		  // ...
 		}
+
 	示例二：
 
 		function f(x) {
@@ -39,12 +40,12 @@ tags: javascript
 4. 原始类型优于封装对象
 	- JavaScript有5个原始类型：Boolean，Number，String，null和undefined
 5. 避免对混合类型使用 `==` 运算符
-	<table>
-	  <thead>
-		<td>参数类型1</td>
-		<td>参数类型2</td>
-		<td>强制转换</td>
-	  </thead>
+	<table class="table table-border">
+	  <tr>
+		<th>参数类型1</td>
+		<th>参数类型2</td>
+		<th>强制转换</td>
+	  </tr>
 	  <tr>
 		<td>null</td>
 		<td>undefined</td>
@@ -157,6 +158,7 @@ tags: javascript
 	- 在时间循环的单独轮次中执行递归，并不会导致调用堆栈溢出
 	 
 	示例一：
+
 		// 接收一个URL的数组并尝试一次下载每个文件直到有一个文件被成功下载
 		function downloadOneAsync(urls, onsuccess, onfailure) {
 		  var n = urls.length;
