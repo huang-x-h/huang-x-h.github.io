@@ -8,7 +8,7 @@ categories: flex
 tags: flex
 ---
 
-Flex编译除了使用Flash Builder或者Flash Developer等IDE工具编译之外，还支持ant脚本编译。下面就简单介绍结合ant脚本编译应用、模块和文档。
+Flex编译除了使用Flash Builder或者Flash Developer等IDE工具编译之外，还支持ant脚本编译。下面就简单介绍结合ant脚本编译应用、库和文档。
 
 准备环境
 
@@ -35,7 +35,7 @@ Flex编译除了使用Flash Builder或者Flash Developer等IDE工具编译之外
 
 	- 一定要配置`FLEX_HOME`，设置FlexSDK的路径，键值名称必须大写，不能修改
 
-	- 在Windows下FlexSDK的位置必须同需要编译的工程在同一盘符下，即FlexSDK在E盘下，那么编译的工程需在E盘，如果不同则会报错，FlexSDK编译的一个bug
+	- 在Windows下FlexSDK的位置必须同需要编译的工程在同一盘符下，即FlexSDK在E盘下，那么编译的工程需在E盘，如果不同则会报错。这是FlexSDK编译的一个bug
 
 2. 编写build.xml配置编译应用，示例如下：
 
