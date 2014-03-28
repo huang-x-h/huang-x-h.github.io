@@ -8,27 +8,17 @@
 require.config({
   'baseUrl': '/js/lib',
   'paths': {
-    'jquery': 'jquery-2.1.0.min'
+    'jquery': 'jquery-2.1.0.min',
+    'bootstrap': 'bootstrap.min'
+  },
+  'shims': {
+    'bootstrap': ['jquery']
   }
 });
 
-require(['jquery'], function($) {
-  (function(){
-    // 给 window 对象绑定 scroll 事件
-    $(window).bind("scroll", function(){
-
-      // 获取网页文档对象滚动条的垂直偏移
-      var scrollTopNum = $(document).scrollTop(),
-          returnTop = $("div.returnTop");
-
-      // 滚动条的垂直偏移大于 0 时显示，反之隐藏
-      (scrollTopNum > 0) ? returnTop.fadeIn("fast") : returnTop.fadeOut("fast");
-    });
-
-    // 点击按钮后，滚动条的垂直方向的值逐渐变为0，也就是滑动向上的效果
-    $("div.returnTop").click(function() {
-      $("html, body").animate({ scrollTop: 0 }, 100);
-    });
-
-  })();
+require(['jquery', 'bootstrap'], function($) {
+  $(document).ready(function() {
+    /* Sidebar height set */
+    $('.sidebar').css('min-height',$(document).height());
+  });
 });

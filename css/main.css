@@ -1,162 +1,104 @@
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+body{
+  color: #2c3e50;
 }
 
-.posts li {
-  line-height: 1.75em;
-}
-
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
-
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
-}
-
-.header a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.title a {
-  color: #a00;
-}
-
-.title a:hover {
-  color: #000;
-}
-
-.header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.header a.extra:hover {
-  color: #000;
-}
-
-.meta {
-  color: #aaa;
-}
-
-.footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.footer .contact {
-  float: left;
-  margin-right: 3em;
-}
-
-.footer .contact a {
-  color: #8085C1;
-}
-
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.footer .rss img {
-  border: 0;
-}
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-}
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
-}
-
-/* returnTop */
-.returnTop {
+.sidebar {
   position: fixed;
-  _position: absolute;
-  right: 10px;
-  bottom: 20px;
-  _bottom: auto;
-  display: none;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #61b72e;
-  border-radius:4px;
-  background: #fff;
-  box-shadow: 0 0 5px #F5F5F5;
-  text-indent: -9999px;
-  cursor: pointer;
+  top: 0px;
+  padding-top: 10%;
 }
-.returnTop .s {
-  position: absolute;
-  top: -2px;
-  _top: -20px;
-  left: 10px;
-  width: 0;
-  height: 0;
-  border-width: 10px;
-  border-color: transparent transparent #61b72e;
-  border-style: dashed dashed solid;
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 10px;
 }
-.returnTop .b {
-  position: absolute;
-  top: 18px;
-  left: 16px;
-  height: 12px;
-  width: 8px;
-  background: #61b72e;
+.sidebar-header .title{
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.sidebar-header .title a{
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a.nav-link {
+  padding-bottom: 5px;
+  padding-top: 7px;
+  color: #aaa;
+}
+a.nav-link i{
+  font-size: 16px;
+}
+a.nav-link:hover { color: #777 }
+
+#bio {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+article{
+  margin-bottom: 40px;
+}
+
+.article_body{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.post-date {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+article.home div a, article.home pre a { color: #2c3e50; }
+article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
+article img { max-width: 100%; }
+
+h1,h2,h3,h4,h5,h6{ font-family: 'Ubuntu', sans-serif; color: #f2756a; }
+h1 a,h2 a,h3 a,h4 a{ color: #f2756a; }
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover{ color: #e74c3c; }
+
+footer {
+  padding-top: 15px;
+  font-family: 'Ubuntu';
+}
+
+/* nav-vertical-tabs component */
+.nav-tabs-vertical {
+  border-right: 1px solid #ddd;
+}
+
+.nav-tabs-vertical li {
+  margin-right: -1px;
+}
+
+.nav-tabs-vertical>li.active>a, .nav-tabs-vertical>li.active>a:hover, .nav-tabs-vertical>li.active>a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-right-color: transparent;
+}
+
+.nav-tabs-vertical>li>a {
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 0 0 4px;
+}
+
+.badge { background: #F2756A; }
+
+#nav-menu{
+  position: fixed;
+  top: 45px;
+  right: 45px;
+  z-index: 2000;
+}
+#nav-menu .dropdown-menu {
+  left: inherit;
+  right: 0px;
 }

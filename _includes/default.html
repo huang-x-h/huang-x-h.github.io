@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+{% include header.html %}
+
+  <script data-main="/js/main" src="/js/require.js"></script>
+  <body>
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a type="button" class="navbar-toggle nav-link" href="http://github.com/{{ site.author.github }}">
+          <i class="fa fa-github"></i>
+        </a>
+        <a type="button" class="navbar-toggle nav-link" href="http://weibo.com/{{ site.author.weibo }}">
+          <i class="fa fa-weibo"></i>
+        </a>
+        <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.email }}">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <a class="navbar-brand" href="{{ site.BASE_PATH }}/">
+          <img src="/images/gravatar.jpg" class="img-circle" />
+          {{ site.title }}
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ site.BASE_PATH }}/">Home</a></li>
+          <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}">Categories</a></li>
+          <li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}">Tags</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- nav-menu-dropdown -->
+    <div class="btn-group hidden-xs" id="nav-menu">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/{{ site.categories_path }}"><i class="fa fa-folder"></i> Categories</a></li>
+        <li><a href="/{{ site.tags_path }}"><i class="fa fa-tags"></i> Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-arrow-up"></i> Top of Page</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-3 sidebar hidden-xs">
+      {% include sidebar.html %}
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3">
+      {{ content }}
+
+      {% include footer.html %}
+
+    </div>
+  </body>
+</html>

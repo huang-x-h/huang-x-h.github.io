@@ -1,6 +1,20 @@
-name: Huang's Blog Site
+paginate: 5 # pagination based on number of posts
+paginate_path: "page:num"
 markdown: kramdown
 kramdown:
   input: GFM
 pygments: true
 permalink: /blog/:year/:month/:day/:title
+
+title: Huang's Blog
+description: 记录生活点滴
+author:
+  name: huangxinghui
+  email: huang.x.hui@gmail.com
+  github: huang-x-h
+  weibo: 1749887314
+  bio: 码农一枚
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
