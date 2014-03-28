@@ -40,37 +40,42 @@ tags: javascript
 4. 原始类型优于封装对象
 	- JavaScript有5个原始类型：Boolean，Number，String，null和undefined
 5. 避免对混合类型使用 `==` 运算符
-	<table class="table table-border">
-	  <tr>
-		<th>参数类型1</td>
-		<th>参数类型2</td>
-		<th>强制转换</td>
-	  </tr>
-	  <tr>
-		<td>null</td>
-		<td>undefined</td>
-		<td>不转换，总是返回true</td>
-	  </tr>
-	  <tr>
-		<td>null或undefined</td>
-		<td>其他非null或undefined的类型</td>
-		<td>不转换，总是返回true</td>
-	  </tr>
-	  <tr>
-		<td>原始类型：String、Number或Boolean</td>
-		<td>Date对象</td>
-		<td>将原始类型转换为数字；将Date对象转换为原始类型（优先尝试toString方法，在尝试valueOf方法）</td>
-	  </tr>
-	  <tr>
-		<td>原始类型：String、Number或Boolean</td>
-		<td>非Date对象</td>
-		<td>将原始类型转换为数字；将非Date对象转换为原始类型（优先尝试valueOf方法，在尝试toString方法）</td>
-	  </tr>
-	  <tr>
-		<td>原始类型：String、Number或Boolean</td>
-		<td>原始类型：String、Number或Boolean </td>
-		<td>将原始类型转换为数字</td>
-	  </tr>
+
+	<table class="table table-bordered">
+	  <thead>
+        <tr>
+          <th>参数类型1</td>
+          <th>参数类型2</td>
+          <th>强制转换</td>
+        </tr>
+	  </thead>
+	  <tbody>
+        <tr>
+          <td>null</td>
+          <td>undefined</td>
+          <td>不转换，总是返回true</td>
+        </tr>
+        <tr>
+          <td>null或undefined</td>
+          <td>其他非null或undefined的类型</td>
+          <td>不转换，总是返回true</td>
+        </tr>
+        <tr>
+          <td>原始类型：String、Number或Boolean</td>
+          <td>Date对象</td>
+          <td>将原始类型转换为数字；将Date对象转换为原始类型（优先尝试toString方法，在尝试valueOf方法）</td>
+        </tr>
+        <tr>
+          <td>原始类型：String、Number或Boolean</td>
+          <td>非Date对象</td>
+          <td>将原始类型转换为数字；将非Date对象转换为原始类型（优先尝试valueOf方法，在尝试toString方法）</td>
+        </tr>
+        <tr>
+          <td>原始类型：String、Number或Boolean</td>
+          <td>原始类型：String、Number或Boolean </td>
+          <td>将原始类型转换为数字</td>
+        </tr>
+	  </tbody>
 	</table>
 6. 了解分号插入的局限
 	- 仅在 `}` 标记之前、一行的结束和程序的结束处推倒分号
