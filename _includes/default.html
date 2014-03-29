@@ -23,7 +23,7 @@
         <a type="button" class="navbar-toggle nav-link" href="mailto:{{ site.author.email }}">
           <i class="fa fa-envelope"></i>
         </a>
-        <a class="navbar-brand" href="{{ site.BASE_PATH }}/">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
           <img src="/images/gravatar.jpg" class="img-circle" />
           {{ site.title }}
         </a>
@@ -32,9 +32,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="{{ site.BASE_PATH }}/">Home</a></li>
-          <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}">Categories</a></li>
-          <li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}">Tags</a></li>
+          <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+          <li><a href="{{ site.baseurl}}/{{ site.categories_path }}">Categories</a></li>
+          <li><a href="{{ site.baseurl}}/{{ site.tags_path }}">Tags</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -45,7 +45,7 @@
         <i class="fa fa-bars"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="{{ site.BASE_PATH }}"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="{{ site.baseurl }}"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="/{{ site.categories_path }}"><i class="fa fa-folder"></i> Categories</a></li>
         <li><a href="/{{ site.tags_path }}"><i class="fa fa-tags"></i> Tags</a></li>
         <li class="divider"></li>

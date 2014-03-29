@@ -4,28 +4,28 @@ layout: nil
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-    <title>Huang's Blog</title>
-    <link href="http://huang-x-h.github.io/"/>
-    <link type="application/atom+xml" rel="self" href="http://huang-x-h.github.io/atom.xml"/>
+    <title>{{ site.title }}</title>
+    <link href="{{ site.baseurl }}"/>
+    <link type="application/atom+xml" rel="self" href="{{ site.baseurl }}/atom.xml"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
     <id>http://huang-x-h.github.io/</id>
     <author>
-        <name>huangxinghui</name>
-        <email>huang.x.hui@gmail.com</email>
+        <name>{{ site.author.name }}</name>
+        <email>{{ site.author.email }}</email>
     </author>
 
     {% for post in site.posts %}
     <entry>
-        <id>{{site.url}}{{ post.id }}</id>
-        <link type="text/html" rel="alternate" href="{{site.url}}{{ post.url }}"/>
+        <id>{{site.baseurl}}/{{ post.id }}</id>
+        <link type="text/html" rel="alternate" href="{{site.baseurl}}/{{ post.url }}"/>
         <title>{{ post.title }}</title>
         <published>{{ post.date | date_to_xmlschema }}</published>
         {% if page.last_modify_date %}
         <updated>{{ post.last_modify_date | date_to_xmlschema }}</updated>
         {% endif %}
         <author>
-            <name>huangxinghui</name>
-            <uri>http://huang-x-h.github.io/</uri>
+            <name>{{ site.author.name }}</name>
+            <uri>{{ site.baseurl }}</uri>
         </author>
         <content type="html">{{ post.content | xml_escape }}</content>
     </entry>
