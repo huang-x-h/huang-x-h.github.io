@@ -16,6 +16,7 @@ tags: git
 
 3. [Pro Git](http://git-scm.com/book/)
 
+4. [GotGitHub](http://www.worldhello.net/gotgithub/index.html)
 
 
 ## 常用命令备忘 ##
