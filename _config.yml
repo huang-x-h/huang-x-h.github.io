@@ -6,14 +6,14 @@ kramdown:
 pygments: true
 permalink: /blog/:year/:month/:day/:title
 
-title: Huang's Blog
-description: 记录生活点滴
+title: Personal Blog
+description: Personal Blog
 author:
-  name: huangxinghui
+  name: dormouse
   email: huang.x.hui@gmail.com
   github: huang-x-h
   weibo: 1749887314
-  bio: 码农一枚
+  bio: Programmer
 
 rss_path: feed.xml
 categories_path: categories.html
