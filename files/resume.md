@@ -48,9 +48,24 @@ Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 
 - 2007/07 - 2009/03
 
-**南京易学 | 研发工程师**
+	**南京易学 | 研发工程师**
 
 	负责开发课程中心和精品课程，供学校在线教学。
+	
+## 项目经验 ##
+
+- 手机app应用开发
+
+	使用Hybrid的方式进行开发，`PhoneGap`进行应用打包，服务端基于NodeJS，使用ExpressJS来开发后台应用管理平台，数据库使用MongoDB进行存储。
+	
+- 参与V8应用开发
+
+	基于java应用开发，前端页面使用flex，负责前端工程搭建设计
+	
+- 电信管理平台AdminPortal开发
+	
+	基于java应用开发，前端页面使用jsp，支持相关业务发布、用户订购使用计费等
+	
 
 ## 技能清单 ##
 
@@ -68,4 +83,5 @@ Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 - 了解异步模块加载RequireJS实现机制，MVC框架Backbone的实现机制，对主流的框架AngularJS/React也有相应了解。
 - 做过Hybrid手机安卓应用开发，对于Hybrid应用的优缺点有所了解
 - 熟悉基于NodeJS开发
+- 熟悉java应用开发
 - 平常喜欢接触学习新的技术知识
