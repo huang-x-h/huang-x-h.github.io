@@ -1,6 +1,6 @@
 ## 个人简介 ##
 
-姓名：黄兴晖 
+姓    名：黄兴晖 
 
 出生年月： 1985年10月
 
@@ -8,13 +8,13 @@
 
 工作经验：7年
 
-Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
+Github  ：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 
 个人博客：[http://huang-x-h.github.io/](http://huang-x-h.github.io/)
 
-手机：13951774654
+手    机：13951774654
 
-邮箱：huang.x.hui@gmail.com
+邮    箱：huang.x.hui@gmail.com
 
 ## 工作经历 ##
 
@@ -27,10 +27,14 @@ Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 	- Web前端框架开发
 	
 		基于JQueryUI和Bootstrap样式框架进行开发定制一套前台组件库。内部控件模板使用`HandlerBars`来处理，控件样式使用`Less`定义。基于node使用grunt来进行项目编译
+
+		基于Web框架进行用户角色管理平台改造，使用Backbone进行前端MVC管理，RequireJS进行模块化管理加载
 	
 	- Mobile前端框架开发
 	
-		负责移动端Web前端框架开发，基于node使用grunt编译项目，使用`Zepto`/`iScroll`/`Ratchet`开发手机应用一些常用组件封装（日历、页签、对话框、轮播等）结合`Sass`管理组件样式。使用`PhoneGap`进行应用打包开发手机应用供内部员工使用
+		负责移动端Web前端框架开发，基于node使用grunt编译项目，使用`Zepto`/`iScroll`/`Ratchet`开发手机应用一些常用组件封装（日历、页签、对话框、轮播等）结合`Sass`管理组件样式。
+
+		基于Mobile框架进行手机app应用开发，`PhoneGap`进行应用打包，服务端基于NodeJS，使用ExpressJS来开发后台应用管理平台，数据库使用MongoDB进行存储。
 	
 	- Flex前端框架开发
 		
@@ -52,20 +56,6 @@ Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 
 	负责开发课程中心和精品课程，供学校在线教学。
 	
-## 项目经验 ##
-
-- 手机app应用开发
-
-	使用Hybrid的方式进行开发，`PhoneGap`进行应用打包，服务端基于NodeJS，使用ExpressJS来开发后台应用管理平台，数据库使用MongoDB进行存储。
-	
-- 参与V8应用开发
-
-	基于java应用开发，前端页面使用flex，负责前端工程搭建设计
-	
-- 电信管理平台AdminPortal开发
-	
-	基于java应用开发，前端页面使用jsp，支持相关业务发布、用户订购使用计费等
-	
 
 ## 技能清单 ##
 
@@ -79,9 +69,9 @@ Github：[https://github.com/huang-x-h](https://github.com/huang-x-h)
 
 ## 自我评价 ##
 
-- 熟练掌握JavaScript语言基础
+- 专注于前端开发，熟练掌握JavaScript语言基础
 - 了解异步模块加载RequireJS实现机制，MVC框架Backbone的实现机制，对主流的框架AngularJS/React也有相应了解。
-- 做过Hybrid手机安卓应用开发，对于Hybrid应用的优缺点有所了解
+- 做过Hybrid手机安卓应用开发，对于Hybrid应用的优缺点有所了解。对于常用的mobile开发框架jQueryMobile/GMU也有相应理解
 - 熟悉基于NodeJS开发
 - 熟悉java应用开发
 - 平常喜欢接触学习新的技术知识
