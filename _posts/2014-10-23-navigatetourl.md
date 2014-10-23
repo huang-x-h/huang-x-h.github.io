@@ -20,7 +20,7 @@ tags: flex,navigatorToUrl
 
 > With navigateToUrl() we are unable to detect server-side redirects, so we are unable to confirm the actual recipient has permits HTTP headers. To resolve this, we elected to block HTTP headers from all navigateToUrl requests.
 
-> 而是用`navigateToUrl()`我们无法检测到服务端重定向了，不能确定接收方是否允许http请求。因此，我们选择禁止HTTP消息头
+> 而是用`navigateToUrl()`我们无法检测到服务端重定向了，不能确定接收方是否允许http消息头。因此，我们选择禁止HTTP消息头
 
 > As noted by several customers, this has proved to be overly restrictive, so we are going to relax the restriction to allow simple headers with navigateToUrl requests. 
 
