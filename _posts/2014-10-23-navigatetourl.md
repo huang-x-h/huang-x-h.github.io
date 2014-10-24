@@ -19,11 +19,15 @@ tags: flex,navigatorToUrl
 > 我们安全策略模型是不允许跨域进行发送HTTP消息头，除非接收到跨域策略文件进行允许
 > 
 > With navigateToUrl() we are unable to detect server-side redirects, so we are unable to confirm the actual recipient has permits HTTP headers. To resolve this, we elected to block HTTP headers from all navigateToUrl requests.
+> 
 > 而是用`navigateToUrl()`我们无法检测到服务端重定向了，不能确定接收方是否允许http消息头。因此，我们选择禁止HTTP消息头
+> 
 > As noted by several customers, this has proved to be overly restrictive, so we are going to relax the restriction to allow simple headers with navigateToUrl requests. 
 > 
 > 正如一些用户指出，这个过于限制了，所以我们又进行放松限制，允许一些简单的消息头
+> 
 > Simple headers are defined by Cross-Origin Resource Sharing (http://bit.ly/1oy1kVp) as:
+> 
 > 这些消息头在跨域资源共享有相关定义
 > 
 > A header is said to be a simple header if the header field name is an ASCII case-insensitive match for Accept, Accept-Language, or Content-Language or if it is an ASCII case-insensitive match for Content-Type and the header field value media type (excluding parameters) is an ASCII case-insensitive match for application/x-www-form-urlencoded, multipart/form-data, ortext/plain.
