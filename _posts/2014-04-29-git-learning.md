@@ -8,7 +8,7 @@ categories: git
 tags: git
 ---
 
-## 长期维护的Git学习资源 ##
+# 长期维护的Git学习资源
 
 1. [Git Reference](http://gitref.org/)
 
@@ -19,7 +19,7 @@ tags: git
 4. [GotGitHub](http://www.worldhello.net/gotgithub/index.html)
 
 
-## 常用命令备忘 ##
+## 常用命令备忘
 
 - `git diff` 查看尚未暂存的文件更新了那些部分
 
@@ -47,9 +47,17 @@ tags: git
 
 - `git checkout -- <file>` 还原文件取消修改
 
-- `git config --global alias.co checkout`设置别名
+- `git config --global alias.co checkout` 设置别名
 
-## .gitignore 的格式规范如下： ##
+- `git reset --hard 766f` 加载一个旧记录并删除所有比之新的记录
+
+- `git checkout 82f5` 加载一个旧记录.你可以选择只恢复特定文件和目录，通过将其加在命令之后：`git checkout 82f5 some.file another.file`
+
+- `git checkout master~5` 回到倒数第五个保存状态
+
+- `git revert 1b6d` 撤销给定哈希值的提交,本撤销被记录为一个新的提交
+
+## .gitignore 的格式规范如下：
 
 > 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。
 > 可以使用标准的 glob 模式匹配。
