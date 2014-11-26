@@ -18,6 +18,8 @@ tags: git
 
 4. [GotGitHub](http://www.worldhello.net/gotgithub/index.html)
 
+5. [Git Tower](http://www.git-tower.com/learn/)
+
 
 ## 常用命令备忘
 
