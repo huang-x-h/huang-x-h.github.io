@@ -46,9 +46,9 @@ FireFox3.5+/Chrome3+/Safari4+/IE8&9部分支持/IE10+
 	
 ## 如何解决
 
-- 从浏览器上处理，以`Chrome`为例，在启动时添加参数`--disable-web-securit`，屏蔽该策略限制，如图
+- 从浏览器上处理，以`Chrome`为例，在启动时添加参数`--disable-web-security`，屏蔽该策略限制，如图
 
-![](/images/posts/disable-web-securit.png)
+![](/images/posts/disable-web-security.png)
 
 - 从服务器上处理，以`Tomcat7`为例，设置过滤器去修改相应消息头，该过滤器需要求`Tomcat7.0.41+`，CORS_Filter(http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter)
 
