@@ -31,3 +31,12 @@ require(['jquery', 'bootstrap'], function($) {
 
 ga('create', 'UA-48905530-1', 'huang-x-h.github.io');
 ga('send', 'pageview');
+
+// Baidu TongJi
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?33cc32fdb8e008ecdfe0f140a4046a73";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
