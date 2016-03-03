@@ -38,6 +38,20 @@ tags: linux
         Enter same passphrase again: 
         Your identification has been saved in /home/username/.ssh/id_rsa.
         Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+        The key fingerprint is:
+        2a:b5:86:ea:85:c2:af:42:94:88:b0:5e:77:56:a4:59 username@vm
+        The key's randomart image is:
+        +--[ RSA 2048]----+
+        |        .E       |
+        |.       +.       |
+        |+..    o.        |
+        |+o . . o         |
+        |o . . + S        |
+        |.o . o o         |
+        |o.. + +          |
+        |...o o           |
+        |.o+.             |
+        +-----------------+
 
 2. 再使用 `ssh-copy-id` 拷贝到目标服务器上，也就是服务器B
 
