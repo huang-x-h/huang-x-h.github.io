@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: SSH自动登录
 date: 2016/3/3 13:47:29 
-last_modify_date: 2016/3/3 14:13:14 
+last_modify_date: 2016/3/4 13:44:02 
 categories: linux
 tags: linux
 ---
@@ -64,6 +64,29 @@ tags: linux
 
         ssh id@server 'bash -s' < local_script.sh
 
+**//2016-03-04 补充**
+
+当时用 `ssh` 连接服务器执行本地脚本时，遇到命令不存在，如
+
+    bash: mvn: command not found
+
+而这个命令是配置在 `/etc/profile` 下
+
+查看了 `man bash` 命令
+
+    When  bash is invoked as an interactive login shell, or as a non-interactive shell with the --login option, it first reads and executes commands
+    from the file /etc/profile, if that file exists.  After reading that file, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile, in  that
+    order,  and  reads  and  executes commands from the first one that exists and is readable.  The --noprofile option may be used when the shell is
+    started to inhibit this behavior.
+
+    When a login shell exits, bash reads and executes commands from the files ~/.bash_logout and /etc/bash.bash_logout, if the files exists.
+
+    When an interactive shell that is not a login shell is started, bash reads and executes commands from ~/.bashrc, if that file exists.  This  may
+    be  inhibited by using the --norc option.  The --rcfile file option will force bash to read and execute commands from file instead of ~/.bashrc.
+
+需要在执行脚本时，添加 `--login` 参数
+
+    ssh id@server 'bash --login -s' < local_script.sh
 
 > 参考链接
 > 
