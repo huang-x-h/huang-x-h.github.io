@@ -6,17 +6,17 @@
       <h1 class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
       <p class="entry-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
-        page.category %} • Category: {{ page.category|capitalize }}{% endif %}</p>
+        page.categories %} • Category: {{ page.categories|capitalize }}{% endif %}</p>
     </header>
 
     <article class="entry-body">
       {% if content %}
-      {{ content }}
+        {{ content }}
       {% else %}
-      {{ page.excerpt }}
-      {% if page.content contains '<!-- more -->' %}
-      <p><a href="{{ page.url }}">Read more »</a></p>
-      {% endif %}
+        {{ page.excerpt }}
+        {% if page.content contains '<!-- more -->' %}
+          <p><a href="{{ page.url }}">Read more »</a></p>
+        {% endif %}
       {% endif %}
     </article>
 
