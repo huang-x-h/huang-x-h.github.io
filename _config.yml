@@ -1,8 +1,12 @@
 paginate: 5 # pagination based on number of posts
 paginate_path: "page:num"
 markdown: kramdown
+kramdown:
+  input: GFM
 pygments: true
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title/
+relative_permalinks: true
+gems: [jekyll-paginate]
 
 title: huang-x-h.github.io
 description: "Personal blog about programming"
