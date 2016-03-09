@@ -1,9 +1,32 @@
-<!-- footer.html -->
-<footer>
- <hr/>
- <p>
- 	&copy; {{ site.time | date: '%Y' }} by {{ site.author.name }} with <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://getbootstrap.com/">Bootstrap</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
- </p>
-</footer>
+<footer class="site-footer">
 
-<!-- footer.html end -->
+  <div class="wrap">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>{{ site.title }}</li>
+        <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        {% if site.author.github %}<li>
+          <a href="https://github.com/{{ site.author.github }}">
+            <span class="icon github">
+            </span>
+            <span class="username">{{ site.author.github }}</span>
+          </a>
+        </li>{% endif %}
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">{{ site.description }}</p>
+    </div>
+
+  </div>
+
+</footer>
