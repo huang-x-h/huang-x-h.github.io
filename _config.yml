@@ -1,15 +1,13 @@
 paginate: 5 # pagination based on number of posts
 paginate_path: "page:num"
 markdown: kramdown
-kramdown:
-  input: GFM
 pygments: true
 permalink: /blog/:year/:month/:day/:title
 
-title: Personal Blog
-description: Personal Blog
+title: huang-x-h.github.io
+description: "Personal blog about programming"
 author:
-  name: dormouse
+  name: huang.xinghui
   email: huang.x.hui@gmail.com
   github: huang-x-h
   weibo: 1749887314

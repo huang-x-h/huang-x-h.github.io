@@ -1,17 +1,17 @@
-<! -- header.html -->
-<meta charset="utf-8">
-<title>{{ site.title }}</title>
-{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-<meta name="author" content="{{ site.author.name }}">
-
-<!-- Enable responsive viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Le styles -->
-<link href="/css/bootstrap.css" rel="stylesheet">
-<link href="/css/font-awesome.css" rel="stylesheet">
-<link href="/css/syntax.css" rel="stylesheet">
-<link href="/css/main.css" rel="stylesheet">
-
-<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
-<! -- header.html end -->
+<header id="main-header">
+  <div id="site-title">
+    <img src="/images/gravatar.jpg" alt="dormouse">
+    <a href="/">{{ site.title }}</a>
+  </div>
+  <div class="links">
+    {% assign current = page.title %}
+    <a href="/" class="page-link{% if current == null %} active{% endif %}">Blog</a>
+    {% for page in site.pages %}
+    {% if page.title and page.permalink != "/404.html" %}
+    <a class="page-link{% if current == page.title %} active{% endif %}"
+       href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    {% endif %}
+    {% endfor %}
+    <a href="/feed.xml" target="_blank" class="page-link">RSS</a>
+  </div>
+</header>
