@@ -1,10 +1,12 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about/
 comments: false
 author_footer: false
 ---
+
+About Me
 
 huang.xinghui
 
