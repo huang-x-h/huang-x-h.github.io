@@ -2,8 +2,6 @@
 layout: post
 comments: true
 title: RequireJS请求模块路径后缀名问题
-date: 2015/6/11 16:35:39 
-last_modify_date: 2015/6/12 11:18:02 
 categories: javascript
 tags: javascript, requirejs
 ---

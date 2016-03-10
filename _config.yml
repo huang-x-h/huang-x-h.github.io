@@ -1,12 +1,7 @@
-paginate: 5 # pagination based on number of posts
-paginate_path: "page:num"
 markdown: kramdown
 kramdown:
   input: GFM
-pygments: true
 permalink: /blog/:year/:month/:day/:title/
-relative_permalinks: true
-gems: [jekyll-paginate]
 
 title: huang-x-h.github.io
 description: "Personal blog about programming"
@@ -16,8 +11,8 @@ author:
   github: huang-x-h
   weibo: 1749887314
   bio: Programmer
+excerpt_separator: "<!-- more -->"
 
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
-baseurl: http://huang-x-h.github.io

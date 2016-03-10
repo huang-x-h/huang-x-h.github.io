@@ -2,13 +2,22 @@
 layout: default
 ---
 
-<div>
+{% for post in site.posts %}
+    <div class="entry">
+        <div class="entry-content">
+            <header>
+                <h1 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+                <p class="entry-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if
+                    post.categories %} • Category: {{ post.categories|capitalize }}{% endif %}</p>
+            </header>
 
-    {% assign index = true %}
+            <article class="entry-body">
+                {{ post.excerpt }}
+                {% if post.content contains '<!-- more -->' %}
+                    <p><a href="{{ post.url }}">Read more »</a></p>
+                {% endif %}
+            </article>
 
-    {% for post in site.posts %}
-        {% assign page = post %}
-        {% include post.html %}
-    {% endfor %}
-
-</div>
+        </div>
+    </div>
+{% endfor %}

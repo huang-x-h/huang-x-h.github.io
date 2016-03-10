@@ -2,8 +2,6 @@
 layout: post
 comments: true
 title: XMLHttpRequest跨域预检
-date: 2015-03-11
-last_modify_date: 2015-03-11
 categories: javascript
 tags: javascript
 ---

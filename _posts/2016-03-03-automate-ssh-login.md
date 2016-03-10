@@ -2,8 +2,6 @@
 layout: post
 comments: true
 title: SSH自动登录
-date: 2016/3/3 13:47:29 
-last_modify_date: 2016/3/4 13:44:02 
 categories: linux
 tags: linux
 ---
