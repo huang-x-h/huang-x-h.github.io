@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: SSH自动登录
-tags: linux, ssh
+tags: linux ssh
 ---
 
 如何实现 `ssh` 自动登录服务器，以及让服务器执行本地 `shell` 脚本
