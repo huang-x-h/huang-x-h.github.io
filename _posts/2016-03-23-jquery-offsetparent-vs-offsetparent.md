@@ -32,32 +32,32 @@ tags: javascript
 
 直接看实现代码 
 
-	```javascript
-	offsetParent: function() {
-		return this.map(function() {
-			var offsetParent = this.offsetParent || docElem;
+```javascript
+offsetParent: function() {
+	return this.map(function() {
+		var offsetParent = this.offsetParent || docElem;
 
-			while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) &&
-				jQuery.css( offsetParent, "position" ) === "static" ) ) {
-				offsetParent = offsetParent.offsetParent;
-			}
+		while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) &&
+			jQuery.css( offsetParent, "position" ) === "static" ) ) {
+			offsetParent = offsetParent.offsetParent;
+		}
 
-			return offsetParent || docElem;
-		});
-	}
-	```
+		return offsetParent || docElem;
+	});
+}
+```
 	
 因此在碰到如下情况时，两者会有很大的不同
 
-	```html
-	<div class="positionRelative">
-        <table>
-            <tr>
-                <td><span>Hello</span></td>
-            </tr>
-        </table>
-    </div>
-	```
+```html
+<div class="positionRelative">
+	<table>
+	  <tr>
+	    <td><span>Hello</span></td>
+	  </tr>
+  </table>
+</div>
+```
 	
 - `span.offsetParent` 为 `td`
 - `td.offsetParent` 为 `table`
