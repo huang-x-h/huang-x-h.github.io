@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: RequireJS笔记
-tags: javascript, requirejs
+tags: javascript requirejs
 ---
 
 # RequireJS #
