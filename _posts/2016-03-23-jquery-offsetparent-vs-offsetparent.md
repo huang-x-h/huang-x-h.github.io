@@ -19,7 +19,7 @@ tags: javascript
 
 > The HTMLElement.offsetParent read-only property returns a reference to the object which is the closest (nearest in the containment hierarchy) positioned containing element. If the element is non-positioned, the nearest table cell or root element (html in standards compliant mode; body in quirks rendering mode) is the offsetParent. offsetParent returns null when the element has style.display set to "none". The offsetParent is useful because offsetTop and offsetLeft are relative to its padding edge.
 
-`HTMLElement.offsetParent 返回一个指向最近的包含该元素的定位元素，如果没有定位元素，则 `offsetParent` 为最近的 table 元素对象或根元素（标准模式下为 html；quirks 模式下为 body）
+`HTMLElement.offsetParent` 返回一个指向最近的包含该元素的定位元素，如果没有定位元素，则 `offsetParent` 为最近的 table 元素对象或根元素（标准模式下为 html；quirks 模式下为 body）
 
 `HTMLElement.offsetParent` 规则
 
