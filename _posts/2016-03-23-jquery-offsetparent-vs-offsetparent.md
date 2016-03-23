@@ -23,46 +23,45 @@ tags: javascript
 
 `HTMLElement.offsetParent` 规则
 
-1. 元素的 `position` 为 `fixed` 或者 `display` 为 `none`, 则 `offsetParent` 为 `null` 
+1. 元素的 `position` 为 `fixed` 或者 `display` 为 `none`, 则 `offsetParent` 为 `null`
 2. 元素 `offsetParent` 查找其父节点，如果 `position` 不为 `static` 即 `relative/absolute/fixed`，则为返回该节点
 3. 如果为 `static` (`position` 不设置时默认为 `static`)，则继续向上层节点查询进行 `position` 判断
 4. 如果没有定位的元素，则 `offsetParent` 为最近的 `table/td` 元素或者跟元素 `body`
 
 `jQuery.offsetParent()` 详细查看 [jQuery](https://api.jquery.com/offsetParent/)
 
-直接看实现代码 
+直接看实现代码
 
 ```javascript
 offsetParent: function() {
-	return this.map(function() {
-		var offsetParent = this.offsetParent || docElem;
+  return this.map(function() {
+    var offsetParent = this.offsetParent || docElem;
 
-		while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) &&
-			jQuery.css( offsetParent, "position" ) === "static" ) ) {
-			offsetParent = offsetParent.offsetParent;
-		}
+    while ( offsetParent && ( !jQuery.nodeName( offsetParent, "html" ) &&
+      jQuery.css( offsetParent, "position" ) === "static" ) ) {
+      offsetParent = offsetParent.offsetParent;
+    }
 
-		return offsetParent || docElem;
-	});
+    return offsetParent || docElem;
+  });
 }
 ```
-	
+
 因此在碰到如下情况时，两者会有很大的不同
 
 ```html
 <div class="positionRelative">
-	<table>
-	  <tr>
-	    <td><span>Hello</span></td>
-	  </tr>
+  <table>
+    <tr>
+      <td><span>Hello</span></td>
+    </tr>
   </table>
 </div>
 ```
-	
+
 - `span.offsetParent` 为 `td`
 - `td.offsetParent` 为 `table`
 - `tr.offsetParent` 为 `table`
 - `$('span').offsetParent()` 为 `div`
 - `$('td').offsetParent()` 为 `div`
 - `$('tr').offsetParent()` 为 `div`
-	
