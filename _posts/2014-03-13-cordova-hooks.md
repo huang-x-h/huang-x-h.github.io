@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Cordova钩子
-date: 2014-03-13 11:20:06 
-last_modify_date: 2014-03-15 22:50:14 
-categories: cordova
 tags: cordova
 ---
 

@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: 跨域资源共享CORS
-date: 2015-02-28
-last_modify_date: 2015-02-28 
-categories: javascript
 tags: javascript
 ---
 
@@ -48,7 +45,7 @@ FireFox3.5+/Chrome3+/Safari4+/IE8&9部分支持/IE10+
 
 - 从浏览器上处理，以`Chrome`为例，在启动时添加参数`--disable-web-security`，屏蔽该策略限制，如图
 
-![](/images/posts/disable-web-security.png)
+![](/assets/images/posts/disable-web-security.png)
 
 - 从服务器上处理，以`Tomcat7`为例，设置过滤器去修改相应消息头，该过滤器需要求`Tomcat7.0.41+`，CORS_Filter(http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#CORS_Filter)
 

@@ -8,13 +8,27 @@
 # Site settings
 title: huang-x-h.github.io
 email: huang.x.hui@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
+description: >
   Personal blog about programming.
+logo: "/assets/images/gravatar.jpg"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://huang-x-h.github.io" # the base hostname & protocol for your site
+paginate:	5 # The number of posts to show per page on your homepage
+
+name: 'huang.xinghui'
+bio: >
+  Programmer
+author_image: "/assets/images/gravatar.jpg"
 twitter_username: huangxinghui
 github_username:  huang-x-h
 
 # Build settings
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+
+kramdown:
+  parse_block_html: true
+
+permalink: /:year/:month/:day/:title/
+
+gems:
+  - jekyll-paginate

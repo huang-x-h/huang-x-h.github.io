@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Flex使用Ant编译介绍
-date: 2014-03-22 00:04:29 
-last_modify_date: 2014-03-22 16:42:40 
-categories: flex
 tags: flex
 ---
 
@@ -220,4 +217,4 @@ Flex编译除了使用Flash Builder或者Flash Developer等IDE工具编译之外
 	- `footer` 文档尾部内容
 	- `template` 指定模板路径，可以用于定制文档模板。例如从原来SDK里的`asdoc/templates`拷贝一份基于上面定制修改
 
-整体示例文件下载[build.properties](/files/build.properties)和[build.xml](/files/build.xml)
+整体示例文件下载[build.properties](/assets/files/build.properties)和[build.xml](/assets/files/build.xml)

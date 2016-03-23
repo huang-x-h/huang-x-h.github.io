@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: 使用ssh_config管理多个ssh账户
-date: 2014-04-15 13:50:18 
-last_modify_date: 2014-04-15 23:25:22 
-categories: ssh
 tags: ssh
 ---
 

@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Effective JavaScript笔记
-date: 2014-03-27 21:36:41 
-last_modify_date: 2014-03-27 23:32:15 
-categories: javascript
 tags: javascript
 ---
 

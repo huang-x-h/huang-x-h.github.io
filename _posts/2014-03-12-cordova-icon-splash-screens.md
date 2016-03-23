@@ -2,8 +2,6 @@
 layout: post
 comments: true
 title: Cordova开发设置应用图标和启动画面
-date: 2014-03-12 22:29:13
-categories: cordova
 tags: android cordova
 ---
 
@@ -81,6 +79,6 @@ iOS平台相同分为iPhone/iPod和iPad，启动图片定义如下：
 
 > 参考链接：
 > 
-> [Icons and Splash Screens](http://cordova.apache.org/docs/en/3.4.0/config_ref_images.md.html#Icons%20and%20Splash%20Screens)
+> [Icons and Splash Screens](http://cordova.apache.org/docs/en/3.4.0/config_ref_assets/images.md.html#Icons%20and%20Splash%20Screens)
 > 
 > [cordova plugin](http://plugins.cordova.io/)

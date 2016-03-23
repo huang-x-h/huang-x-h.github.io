@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: NodeJS学习资源
-date: 2014-07-02 16:16:53 
-last_modify_date: 2014-07-02 16:16:57 
-categories: nodejs
 tags: nodejs
 ---
 

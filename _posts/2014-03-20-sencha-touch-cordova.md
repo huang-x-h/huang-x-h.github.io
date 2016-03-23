@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Sencha Touch协同Cordova构建开发Android应用
-date: 2014-03-20 14:12:02 
-last_modify_date: 2014-03-20 15:44:29 
-categories: cordova sencha
 tags: cordova sencha
 ---
 
@@ -33,7 +30,7 @@ tags: cordova sencha
 
 	这时SenchCmd会生成一个种子工程，包含所需要的文件，如图
 
-	![](/images/posts/sencha-seed.png)
+	![](/assets/images/posts/sencha-seed.png)
 
 	具体目录和文件含义，摘自于http://docs.sencha.com/touch/2.3.1/#!/guide/command_app
 	
@@ -70,14 +67,14 @@ tags: cordova sencha
 		                        # includes Sencha Touch theme by default
 		
 		    icons               # Application icons for all mobile devices
-		                        # When replacing these default images with your own,
+		                        # When replacing these default assets/images with your own,
 		                        # make sure the file name and the dimension stays exactly the same
 		        ...
 		    loading             # Application start-up screens for iOS devices
 		                        # Similarly to icons, make sure the file names and
 		                        # dimension stays the same
 		        ...
-		    images              # Put other images used by your application here
+		    assets/images              # Put other assets/images used by your application here
 		
 		index.html
 		app.js                  # Contains application's initialization logic

@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Git学习资源
-date: 2014-04-29 22:42:53
-last_modify_date: 2014-06-13 11:23:59 
-categories: git
 tags: git
 ---
 

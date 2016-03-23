@@ -2,10 +2,7 @@
 layout: post
 comments: true
 title: navigatorToUrl报Security error #3769错误 
-date: 2014-10-23 18:51:29 
-last_modify_date: 2014-10-23 19:27:48 
-categories: flex
-tags: flex,navigatorToUrl
+tags: flex
 ---
 
 在flex中一般使用navigateToUrl请求服务下载内容，最近客户反映下载失败(flash15)。而本机测试都是好的(flash11)，可以进行请求下载

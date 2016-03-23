@@ -2,9 +2,6 @@
 layout: post
 comments: true
 title: Window下Cordova构建Android开发
-date: 2014-03-04 22:29:13
-last_modify_date: 2014-03-13 14:22:31 
-categories: android
 tags: android cordova
 ---
 
@@ -14,15 +11,15 @@ tags: android cordova
 
 - 设置JAVA_HOME，如图
 
-![](/images/posts/javahome.png)
+![](/assets/images/posts/javahome.png)
 
 - 设置ANT_HOME，如图
 
-![](/images/posts/anthome.png)
+![](/assets/images/posts/anthome.png)
 
 - 设置PATH指定安装Android SDK目录，如图
 
-![](/images/posts/path.png)
+![](/assets/images/posts/path.png)
 
 - 指定SDK安装目录：
 `;D:\Android\sdk\platform-tools;D:\Android\sdk\tools`
@@ -134,7 +131,7 @@ tags: android cordova
 
 运行成功如图
 
-![](/images/posts/emulate.png)
+![](/assets/images/posts/emulate.png)
 
 执行如下命令运行到设备中，确保设备打开USB开发者调试功能
 
@@ -150,11 +147,11 @@ tags: android cordova
 
 打开ADT（Android Developer Tools）开发工具，导入工程，如图
 
-![](/images/posts/import.png)
+![](/assets/images/posts/import.png)
 
 导入成功会有两个工程`hello`和`heelo-Cordovalib`，如图
 
-![](/images/posts/project.png)
+![](/assets/images/posts/project.png)
 
 然后在Eclipse里进行选择SDK版本编译
 

@@ -1,28 +1,67 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<main class="content" role="main">
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </div>
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} ? <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+    <section class="post-content">
+      <a name="topofpage"></a>
+      {{content}}
+    </section>
+    <div class="bottom-teaser cf">
+      <div class="isLeft">
+        <h5 class="index-headline featured"><span>Written by</span></h5>
+        <section class="author">
+          <div class="author-image"></div>
+          <h4>{{ site.name }}</h4>
+          <p class="bio">{{site.bio}}</p>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+          <p>
+            <span>
+              {% if site.github_username %}
+                {% include icon-github.html username=site.github_username %}
+              {% endif %}
+            </span>
+          </p>
+          <p>
+            <span>
+              {% if site.twitter_username %}
+                {% include icon-twitter.html username=site.twitter_username %}
+              {% endif %}
+            </span>
+          </p>
+          <hr>
+          <p class="published">Published <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
+        </section>
+      </div>
+      {{/post}}
+      <div class="isRight">
+        <h5 class="index-headline featured"><span>Supported by</span></h5>
+        <footer class="site-footer">
+          <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a> and <a href="https://github.com/ageitgey/amplify">Amplify</a></section>
+          <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+          <div class="inner">
+            <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{site.name}}</a> &copy; {{ site.time | date: '%Y' }}<br>All rights reserved.</section>
+          </div>
+        </footer>
+      </div>
+    </div>
 
-  {% if page.comments %}
-  <div id="disqus_thread"></div>
-  <script>
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
+    {% if page.comments %}
+    <div id="disqus_thread"></div>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
-      s.src = '//littlebean.disqus.com/embed.js';
+        s.src = '//littlebean.disqus.com/embed.js';
 
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  {% endif %}
-</article>
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    {% endif %}
+  </article>
+</main>

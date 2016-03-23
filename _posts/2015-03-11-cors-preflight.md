@@ -2,12 +2,11 @@
 layout: post
 comments: true
 title: XMLHttpRequest跨域预检
-categories: javascript
 tags: javascript
 ---
 
 上篇介绍如何解决跨域请求问题，后来在使用过程中发现，通过`XHR`发送`get/post`请求时，都会派发`options`请求，如下图
-![](/images/posts/preflight.png)
+![](/assets/images/posts/preflight.png)
 
 后来查资料发现是`CORS`里的`preflight`预检机制[HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) by MDN
 

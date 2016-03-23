@@ -2,9 +2,7 @@
 layout: post
 comments: true
 title: RequireJS笔记
-date: 2014-02-20
-categories: javascript
-tags: requirejs
+tags: javascript, requirejs
 ---
 
 # RequireJS #
