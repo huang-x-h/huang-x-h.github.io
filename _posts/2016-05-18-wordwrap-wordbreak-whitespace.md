@@ -16,6 +16,8 @@ tags: css
 
 内容超出在正常的单词结束处换行，不截断英文单词换行
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40;">I have a long word which is testasdfdfjlandfg;lkj;ldfasdf;lkjnasdgf</p>
 ```
@@ -25,6 +27,8 @@ tags: css
 - `break-word`
 
 内容超出如果行内没有多余的地方容纳该单词到结尾，则该单词被强制分割换行
+
+示例
 
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; word-wrap: break-word">I have a long word which is testasdfdfjlandfg;lkj;ldfasdf;lkjnasdgf</p>
@@ -39,6 +43,8 @@ tags: css
 	
 使用默认的断行规则，中文在边界处文字换行，英文单词换行，如果单词长度过长，则撑破容器
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; word-break: normal">你好，这是中文文字内容。I have a long word which is testasdfdfjlandfg;lkj;ldfasdf;lkjnasdgf</p>
 ```
@@ -49,6 +55,8 @@ tags: css
 
 同 `normal` 只是可以强行截断英文单词
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; word-break: break-all;">你好，这是中文文字内容。I have a long word which is testasdfdfjlandfg;lkj;ldfasdf;lkjnasdgf</p>
 ```
@@ -58,6 +66,8 @@ tags: css
 - `keep-all`
 
 不允许文字断行，中文把前后标点符号内的内容整个换行，英文以单词换行，过长则撑破容器
+
+示例
 
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; word-break: keep-all;">你好，这是中文文字内容。I have a long word which is testasdfdfjlandfg;lkj;ldfasdf;lkjnasdgf</p>
@@ -72,6 +82,8 @@ tags: css
 
 连续的空白符会被合并,换行符会被当作空白符来处理,内容超出换行
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; white-space: normal">I have     multiple
         space and a line break</p>
@@ -83,6 +95,8 @@ tags: css
 - `nowrap`
 
 和 `normal` 一样，连续的空白符会被合并,但文本内的换行无效,内容超出不换行
+
+示例
 
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; white-space: nowrap">I have     multiple
@@ -96,6 +110,8 @@ tags: css
 
 连续的空白符会被保留,在遇到换行符或者 `<br>` 元素时才会换行,内容超出不换行
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; white-space: pre">I have     multiple
     space and a line break</p>
@@ -108,6 +124,8 @@ tags: css
 
 连续的空白符会被合并,在遇到换行符或者 `<br>` 元素时换行,内容超出换行
 
+示例
+
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; white-space: pre-line">I have     multiple
     space and a line break</p>
@@ -119,6 +137,8 @@ tags: css
 - `pre-wrap` 
 
 连续的空白符会被保留,在遇到换行符或者 `<br>` 元素时换行,内容超出换行
+
+示例
 
 ```html
 <p style="width: 100px; border: 1px solid #ff5f40; white-space: pre-wrap">I have     multiple

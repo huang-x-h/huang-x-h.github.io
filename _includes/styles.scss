@@ -123,13 +123,14 @@ body {
   }
 
   article {
-    padding: 20px 0;
     border-bottom: 1px solid #f2f2f0;
     &:last-child {
-      border-bottom: 0px;
+      border-bottom: 0;
     }
     .post-title {
-      margin: 0 0;
+      font-size: 48px;
+      line-height: 1.2;
+      color: #333332;
       a {
         text-decoration: none;
         color: #333332;
@@ -441,7 +442,7 @@ code {
   margin: 0 5px;
   font-weight: bold;
 }
-	
+
 pre {
   > code {
     display: block;
