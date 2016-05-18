@@ -27,8 +27,8 @@ amp-img {
 
 $rs: 16px;
 
-$font-serif: Georgia,Cambria,"Times New Roman",Times,'Lora', serif;
-$font-sans: "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
+$font-serif: 'Microsoft YaHei', 微软雅黑, Georgia,Cambria,"Times New Roman",Times,'Lora', serif;
+$font-sans: 'Microsoft YaHei', 微软雅黑, "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
 
 @mixin respond-to($breakpoint) {
   @media only screen and (max-width: $breakpoint + px) {
@@ -47,15 +47,11 @@ main {
 
 body {
   font-family: $font-sans;
+  background-color: #fff;
+  color: #333;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -webkit-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig";
+  font-size: 18px
 }
 
 .site-header {
@@ -133,12 +129,6 @@ body {
       border-bottom: 0px;
     }
     .post-title {
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      font-style: normal;
-      display: block;
-      font-size: 36px;
-      line-height: 1.15;
       margin: 0 0;
       a {
         text-decoration: none;
@@ -260,43 +250,20 @@ body {
     width: 100%;
     font-family: $font-serif;
     color: #333333;
-    h1, h2, h3 {
-      font-family: $font-sans;
-    }
-    h3, h4, h5, h6 {
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      font-style: normal;
+    h1 {
+	  font-size: 48px;
+	  font-weight: 600;
+	  letter-spacing: -.6px;
+	  line-height: 1.2;
+	  padding: 15px 0 0 0
+	}
+	h2 {
       font-size: 24px;
-      line-height: 1.3;
-      margin-top: 50px;
-      margin-bottom: 0px;
-      font-family: $font-sans;
-    }
-    h3 {
-      font-size: 36px;
-    }
-    h2, h1 {
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      font-style: normal;
-      font-size: 42px;
-      line-height: 1.2;
-      margin-top: 50px;
-      margin-bottom: 0px;
+      font-weight: 600
     }
     p {
-      font-weight: 400;
-      font-style: normal;
-      font-size: 22px;
-      line-height: 1.59;
-      letter-spacing: -.002em;
-      margin-top: 30px;
-      margin-bottom: 0;
-      color: #333333;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-      hyphens: auto;
+      line-height: 1.5;
+      font-weight: 400
     }
     a {
       color: #333333;
@@ -343,24 +310,11 @@ body {
       }
     }
     ul, ol {
-      padding: 0 0 30px;
       margin: 0;
+      padding: 0 0 0 18px
     }
     li {
-      padding: 0;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 23px;
-      line-height: 30px;
-      margin-left: 30px;
-      margin-bottom: 12px;
-      padding-top: 2px;
-      p {
-        padding: 0 0 golden-ratio(1rem, 1);
-      }
-    }
-    ol li {
-      list-style-type: decimal;
+      padding: 2px 0
     }
   }
   .bottom-teaser {
@@ -485,26 +439,21 @@ body {
   }
 }
 
-
-pre,
 code {
-  font-size: 15px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-  background-color: #eeeeff;
+  color: #444;
+  margin: 0 5px;
+  font-weight: bold;
 }
-
-code {
-  padding: 1px 5px;
-}
-
+	
 pre {
-  padding: 8px 12px;
-  overflow-x: scroll;
   > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    display: block;
+    overflow-x: auto;
+    color: #f3f3f3;
+    background: none repeat scroll 0% 0% #444;
+    margin: 15px 0;
+    font-weight: normal;
+    padding: 5px 15px;
   }
 }
 
