@@ -213,13 +213,10 @@ body {
     font-family: $font-sans;
   }
   .post-title {
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: -0.04em;
-    font-size: 50px;
-    line-height: 1.1;
-    color: #333332;
-    margin-bottom: 50px;
+    a:hover {
+	  color: #cb3837;
+      text-decoration: underline
+	}
   }
   .author-image {
     background-image: url({{ site.baseurl }}{{site.author_image}});
