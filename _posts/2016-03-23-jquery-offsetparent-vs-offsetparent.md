@@ -65,3 +65,5 @@ offsetParent: function() {
 - `$('span').offsetParent()` 为 `div`
 - `$('td').offsetParent()` 为 `div`
 - `$('tr').offsetParent()` 为 `div`
+
+--- 2016/04/20 更新 ---
