@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: ESLint 共享配置接送
+title: ESLint 共享配置使用
 tags: eslint
 ---
 
@@ -17,7 +17,7 @@ tags: eslint
 
 1. 创建 `Node` 模块，**模块名称以 `eslint-config-` 开头**，例如：`eslint-config-myconfig`
 2. 创建模块定义 index.js
-    
+
 	```js
 	module.exports = {
 		globals: {
@@ -38,7 +38,7 @@ tags: eslint
 	}
 	```
 	或者
-	
+
 	```json
 	{
 		"extends": "myconfig"
