@@ -9,13 +9,13 @@ tags: mysql
 
 <!-- more -->
 
-1. Download mysql
+## Download mysql
 
 https://dev.mysql.com/downloads/mysql/
 
 找到对应系统版本，这里是 Red Hat Enterprise Linux 7 / Oracle Linux 7 (x86, 64-bit), RPM Bundle
 
-2. Unpackage Bundle
+## Install Bundle
 
 解压压缩包，按顺序安装
 
@@ -40,11 +40,11 @@ $ rpm -i mysql-community-server-*
 | mysql-community-embedded-devel | Development header files and libraries for MySQL as an embeddable library |
 | mysql-community-test | Test suite for the MySQL server |
 
-3. Start mysql
+## Start mysql
 
 `$ sudo service mysqld start`
 
-4. Configuration
+## Configuration
 
 安装好后，`mysql` 默认给 `root` 用户生成临时密码
 
