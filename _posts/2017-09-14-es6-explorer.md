@@ -5,7 +5,7 @@ title: ES6 Explorer
 tags: javascript
 ---
 
-JavaScript 里的变量和函数提升
+`ES6` 特性探索
 
 <!-- more -->
 
@@ -39,6 +39,7 @@ function letText() {
 ```
 
 清洁内部函数代码
+
 ```js
 for (let i = 0; i < 5; i++) {
   setTimeout(function () {
@@ -301,8 +302,203 @@ var Foo = () => {};
 console.log(Foo.prototype); // undefined
 ```
 
+## 参数处理
+
+1. 默认参数
+
+```js
+function foo(x, y=1) {
+  console.log(x + y)
+}
+
+foo(2) //output: 3
+foo(2, 2) // output: 4
+```
+
+2. 剩余参数 (rest parameters)
+
+语法
+
+```
+function foo(arg0, ...restArgs) {
+  //do something
+}
+```
+
+**注意** 剩余参数只能是最后一个命名参数
+
+```js
+let x1 = (arg0, ...rest, arg1) {
+  console.log(rest) // Uncaught SyntaxError: Unexpected token ...
+}
+```
+
+3. 命名参数 (named parameters)
+
+```js
+function foo(arg0, [opt1, opt2]) {
+}
+```
+
+## 符号 Symbol
+
+`symbol` 是一种基本数据类型，`symbol` 值可用于定义对象属性，语法 `Symbol([description])`，参数是字符串类型
+
+### 特性
+1. 每一个 `Symbol()` 返回的 `symbol` 都是唯一的
+
+```js
+let sym1 = Symbol()
+let sym2 = Symbol('me')
+let sym3 = Symbol('me')
+
+console.log(sym2 === sym3) // output: false
+```
+
+2. `symbol` 不能使用 `new` 进行创建
+
+```js
+let sym = new Symbol(); // Uncaught TypeError: Symbol is not a constructor
+```
+
+3. `symbol` 不能被枚举
+
+`for ... in` 循环不能枚举出 `symbol`，可以通过 `Object.getOwnPropertySymbols()` 获取
+
+```js
+var obj = {}
+obj.a = 'a'
+obj['b'] = 'b'
+obj[Symbol('a')] = 'symbol a'
+
+for (var key in obj) {
+  console.log(key) // output: a b
+}
+
+Object.getOwnPropertySymbols(obj) // [Symbol('a')]
+```
+
+4. `Symbol` 键属性在 `JSON.stringify` 输出时会被忽略
+
+```js
+JSON.stringify(obj) // "{"a":"a","b":"b"}"
+```
+
+### 方法
+
+1. `Symbol.for(key)` 根据 `key` 寻找 `symbol` 值，如果存在直接返回，不存在则创建 `key` 全局 `symbol`
+
+```js
+Symbol.for('bar') === Symbol.for('bar'); // true
+Symbol('bar') === Symbol('bar'); // false
+Symbol('bar') === Symbol.for('bar') // false
+```
+
+2. `Symbol.keyFor(sym)` 根据 `symbol` 值返回 `key` 值
+
+```js
+Symbol.keyFor(Symbol.for('tokenString')) === 'tokenString';  // true
+```
+
+### 内置 `Symbol`
+
+- `Symbol.iterator` 一个返回一个对象默认迭代器的方法。使用 `for...of`
+- `Symbol.toStringTag` 用于对象的默认描述的字符串值。使用 `Object.prototype.toString()`
+- ...
+
+更多参考 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+
+## 类 Class
+
+类定义，构造函数，原型函数，静态函数
+
+```js
+class [className] [extends] {
+  // class body
+}
+```
+
+1. 函数可以提升，而类不能提升
+
+```js
+var p = new Person() // Uncaught ReferenceError: Person is not defined
+
+class Person {
+
+}
+```
+
+2. 类构造函数，原型方法和静态方法
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  get fullName() {
+  }
+
+  say() {
+    console.log(`${this.name} say`)
+  }
+
+  static gender() {
+    console.log('static method')
+  }
+}
+
+new Person('Lilei').say();
+Person.gender();
+```
+
+3. 类继承
+
+类只能继承一个，可以通过 `super` 方法父类方法
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  say() {
+    console.log(`${this.name} say`)
+  }
+}
+
+class Teacher extends Person {
+  say() {
+    super()
+    console.log(`${this.name} teacher say`)
+  }
+}
+```
+
+只能继承含有构造函数的类，如果想继承普通对象可以通过 `Object.setPrototypeOf`
+
+```js
+var Person = {
+  say() {
+    console.log(`${this.name} say`)
+  }
+}
+
+class Teacher {
+  constructor(name) {
+    this.name = name
+  }
+}
+
+Object.setPrototypeOf(Teacher, Person)
+
+new Teacher('teacher').say()
+```
+
+## 模版字符串 Template strings
+
 参考资料
 
-> http://adripofjavascript.com/blog/drips/variable-and-function-hoisting
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 >
-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
