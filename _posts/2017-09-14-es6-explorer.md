@@ -319,10 +319,12 @@ foo(2, 2) // output: 4
 
 语法
 
-```
+```js
 function foo(arg0, ...restArgs) {
-  //do something
+  console.log(arg0, restArgs.length)
 }
+
+foo(1, 2, 3, 4, 5) // output: 1 4
 ```
 
 **注意** 剩余参数只能是最后一个命名参数
@@ -336,8 +338,11 @@ let x1 = (arg0, ...rest, arg1) {
 3. 命名参数 (named parameters)
 
 ```js
-function foo(arg0, [opt1, opt2]) {
+function foo(arg0, {opt1, opt2}) {
+  console.log(arg0, opt1, opt2)
 }
+
+foo(1, {opt1: 2, opt2: 3}) // output: 1 2 3
 ```
 
 ## 符号 Symbol
@@ -494,6 +499,75 @@ Object.setPrototypeOf(Teacher, Person)
 
 new Teacher('teacher').say()
 ```
+
+## 模块 Module
+
+`ES6` 里模块会用到两个关键字 `import` 和 `export`
+
+1. `export` 导出可以是 `function/class/var/let/const`
+
+```js
+function myFunction() {
+
+}
+export { myFunction }
+export const PI = 3.1415926
+```
+
+2. `export` 导出列表
+
+```js
+function myFunction() {
+
+}
+
+class myClass {
+
+}
+
+export { myFunction, myClass }
+```
+
+**注意** `export` 可以放在文件任意位置，也可以定义多次，不能重复 `export` 同一内容
+
+3. `export/import` 重命名
+
+重命名通过 `as` 关键字实现
+
+```js
+import { myFunction as myFun } from './my-moudle.js'
+```
+
+```js
+function v1() {}
+
+function v2() {}
+
+export {
+  v1 as streamV1,
+  v2 as streamV2
+}
+```
+
+4. 默认导出，只能只有一个 `default`
+
+```js
+export default myFunction
+```
+
+5. 聚集模块
+
+```js
+// 从 `my-module` 模块导入，然后导出里面的 `moduleA` 和 `moduleB` 内容
+export { moduleA, moduleB } from 'my-module'
+
+// 导入 `my-module` 模块，然后又全部导出
+export * from 'my-module'
+```
+
+6. 动态引入
+
+`import ('path/module')` 返回 `Promise` 对象。目前已在 `webpack` 上使用
 
 ## 模版字符串 Template strings
 
