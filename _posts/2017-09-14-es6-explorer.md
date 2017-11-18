@@ -500,6 +500,8 @@ Object.setPrototypeOf(Teacher, Person)
 new Teacher('teacher').say()
 ```
 
+更多参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
 ## 模块 Module
 
 `ES6` 里模块会用到两个关键字 `import` 和 `export`
@@ -571,8 +573,281 @@ export * from 'my-module'
 
 ## 模版字符串 Template strings
 
+### 语法
+
+```js
+`string text`
+
+`string text line 1
+ string text line 2`
+
+`string text ${expression} string text`
+
+tag `string text ${expression} string text`
+```
+
+示例
+
+```js
+// 多行
+`one line,
+another line`
+
+// 变量
+var name = 'Lilei';
+console.log(`My name is ${name}`) // output: My name is Lilei
+
+// 表达式
+function compare(a, b) {
+  return a > b;
+}
+
+var a = 1, b =2;
+console.log(`${a} is ${compare(a, b) ? 'greater than' : 'less than'} ${b}`)
+// output: 1 is less than 2
+```
+
+### 标签模版字符串 Tagged template literals
+
+标签函数，第一个参数是字符串值数组，后面参数为要替换的表达式
+
+```js
+var a = 1, b =2;
+function myTag(strings, ...values) {
+  console.log(strings); // output: ["", " is ", "", raw: Array(3)]
+  console.log(values); // output: [1, 2]
+
+  return 'Tag template';
+}
+
+myTag`${a} is ${b}`; // output: "Tag template"
+```
+
+内置标签函数 `String.raw` 原始字符串
+
+```js
+String.raw`Hello \n World` // output:
+```
+
+## Proxy 代理
+
+代理可以用在自定义基础操作行为，比如属性取值，属性赋值，属性枚举，方法调用等。内部提供了一系列 `trap` 来自定义操作行为
+
+### 语法
+
+```js
+// target 代理对象，可以是对象，包括数组，函数，代理等
+// handler 定义代理操作行为执行函数
+var p = new Proxy(target, handler)
+```
+
+`handler.get` 示例
+
+```js
+// handler.get 定义属性取值方式代理
+var obj = {
+  a: 'a',
+  b: 'b'
+}
+
+var p = new Proxy(obj, {
+  // target 代理目标对象
+  // property 对象属性
+  // receiver 代理对象
+  get: function (target, property, receiver) {
+    if (property === 'b') {
+      return 'changed'
+    }
+
+    return target[property];
+  }
+});
+
+console.log(p.a) // output: 'a'
+console.log(p.b) // output: 'changed'
+```
+
+`handler.apply` 示例
+
+```js
+// handler.apply 定义函数调用处理
+var p = new Proxy(() => {}, {
+  // target 代理目标对象
+  // thisArg 函数调用 `this` 对象
+  // argumentsList 函数调用参数数组
+  apply: function (target, thisArg, argumentsList) {
+    console.log(argumentsList.join(','));
+  }
+});
+
+console.log(p(1, 2, 3)) // output: '1,2,3'
+```
+
+更多参看 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+
+## Reflect 反射
+
+`Reflect` 提供内置对象 `JavaScript` 操作方法解析，这些方法和 `proxy handlers` 一致，比如 `delete` 删除属性操作，`in` 操作判断，属性取值等
+
+示例
+
+```js
+／/ 取值调用
+var obj = {a: 'value is a'}
+Reflect.get(obj, 'a') // output: 'value is a'
+
+// 构造函数调用
+var obj = Reflect.construct(Foo, args);
+// 等同于 var obj = new Foo(...args);
+```
+
+更多参看 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+
+## Generator
+
+`Generator` 通过 `function*` 和 `yield` 来实现简化迭代器
+
+语法
+
+```js
+function* gen() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gen();
+console.log(g.next().value);
+console.log(g.next().value);
+console.log(g.next().value);
+// output: 1 2 3
+```
+
+`Generator` 结合 `TJ` 大神的 [`co`](https://github.com/tj/co) 库能很方便控制
+
+不过在 `ES7` 引入 `async/await` 之后，基本是替代了 `generator` 方案
+
+## Promise
+
+用于异步操作，返回允诺对象
+
+```js
+new Promise(function (resolve, reject) {
+  //...
+})
+```
+
+![Promsie](/assets/images/js-promise.svg)
+
+示例
+
+```js
+// serial 窜行执行
+function asyncAdd(value) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, ++value)
+  })
+}
+
+asyncAdd(1).then(asyncAdd).then(value => {console.log(value)}) // output: 3
+```
+
+`Promise.all(iterable)` 并行执行，当所有都执行成功后，或者其中一个失败则立马返回进行失败处理
+
+```js
+Promise.all([asyncAdd(1), asyncAdd(1)]).then(values => {console.log(values)}) // output: (2) [2, 2]
+```
+
+`Promise.race(iterable)` 竞争执行，当其中一个执行成功或者失败时返回进入对应处理
+
+```js
+// 可用于模拟阀值，如果服务请求超过100s时，直接返回阀值处理
+function remote() {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, Math.random() * 200, 'remote call')
+  })
+}
+
+function threshold() {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'threshold call')
+  })
+}
+
+Promise.race([remote(), threshold()]).then(value => {console.log(value)})
+```
+
+## Map／Set／WeakMap／WeakSet
+
+### Map 键值对集合
+
+基本类型 (`string, number, boolean, null, undefined, symbol`)或者对象都可以做为键值
+
+```js
+var myMap = new Map();
+
+myMap.set('string', 'primitive key');
+myMap.set({}, 'object key');
+myMap.set(() => {}, 'function key');
+
+console.log(myMap) // output: Map(3) {"string" => "primitive key", {…} => "object key", ƒ => "function key"}
+```
+
+`Object` 和 `Map` 对比
+
+1. `Object` 的键只能是 `String/Symbol`
+2. `Map` 是可迭代的，而 `Object` 迭代时得判断是否是该对象属性 `hasOwnProperty`
+3. `Object` 是有原型 `prototype` 会有一些保留键值
+4. `Map` 在键值对频繁插入删除时，性能更好
+
+### Set 存储唯一值集合
+
+提供唯一值存储，值可以是基本类型和对象引用
+
+```js
+var mySet = new Set();
+
+mySet.add(1);
+mySet.add('a');
+mySet.add(1);
+
+console.log(mySet) // output: Set(2) {1, "a"}
+```
+
+### WeakMap 弱引用键键值对集合
+
+**注意** 键的类型必须是对象引用，基本类型不可以，值可以是任何值
+
+```js
+var myWeakMap = new WeakMap();
+var obj = {};
+
+myWeakMap.set(obj, 'object key');
+myWeakMap.has(obj) // output: true
+
+myWeakMap.set(1, 'number'); // Uncaught TypeError: Invalid value used as weak map key
+```
+
+### WeakSet 弱引用集合
+
+**注意** 集合值只能是对象引用，基本类型不可以
+
+```js
+var myWeakSet = new WeakSet();
+var obj = {};
+
+myWeakSet.add(obj);
+myWeakSet.has(obj); // output: true
+
+myWeakSet.add(1); // Uncaught TypeError: Invalid value used in weak set
+```
+
 参考资料
 
-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+> https://hacks.mozilla.org/category/es6-in-depth/
 >
-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+> https://ponyfoo.com/articles/tc39-ecmascript-proposals-future-of-javascript
+>
+> https://prop-tc39.now.sh/
+>
+> https://babeljs.io/learn-es2015/
