@@ -692,7 +692,7 @@ console.log(p(1, 2, 3)) // output: '1,2,3'
 示例
 
 ```js
-／/ 取值调用
+// 取值调用
 var obj = {a: 'value is a'}
 Reflect.get(obj, 'a') // output: 'value is a'
 
