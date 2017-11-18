@@ -27,8 +27,8 @@ amp-img {
 
 $rs: 16px;
 
-$font-serif: 'Microsoft YaHei', 微软雅黑, Georgia,Cambria,"Times New Roman",Times,'Lora', serif;
-$font-sans: 'Microsoft YaHei', 微软雅黑, "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
+$font-serif: Georgia,Cambria,"Times New Roman",Times,'Lora', serif;
+$font-sans: "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
 
 @mixin respond-to($breakpoint) {
   @media only screen and (max-width: $breakpoint + px) {
@@ -46,12 +46,17 @@ main {
 }
 
 body {
-  font-family: $font-sans;
   background-color: #fff;
-  color: #333;
+  font-family: $font-sans;
   margin: 0;
   padding: 0;
-  font-size: 18px
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
 }
 
 .site-header {
@@ -123,13 +128,19 @@ body {
   }
 
   article {
+    padding: 20px 0;
     border-bottom: 1px solid #f2f2f0;
     &:last-child {
-      border-bottom: 0;
+      border-bottom: 0px;
     }
     .post-title {
-      line-height: 1.2;
-      color: #333332;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-style: normal;
+      display: block;
+      font-size: 36px;
+      line-height: 1.15;
+      margin: 0 0;
       a {
         text-decoration: none;
         color: #333332;
@@ -150,9 +161,6 @@ body {
       font-size: 14px;
       color: #b3b3b1;
       line-height: 30px;
-      .post-title {
-        font-size: 48px;
-      }
       a {
         color: #b3b3b1;
         text-decoration: none;
@@ -216,10 +224,13 @@ body {
     font-family: $font-sans;
   }
   .post-title {
-    a:hover {
-	  color: #cb3837;
-      text-decoration: underline
-	}
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.04em;
+    font-size: 50px;
+    line-height: 1.1;
+    color: #333332;
+    margin-bottom: 50px;
   }
   .author-image {
     background-image: url({{ site.baseurl }}{{site.author_image}});
@@ -250,20 +261,51 @@ body {
     width: 100%;
     font-family: $font-serif;
     color: #333333;
-    h1 {
-	  font-size: 48px;
-	  font-weight: 600;
-	  letter-spacing: -.6px;
-	  line-height: 1.2;
-	  padding: 15px 0 0 0
-	}
-	h2 {
+    h1, h2, h3 {
+      font-family: $font-sans;
+    }
+    h3, h4, h5, h6 {
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-style: normal;
       font-size: 24px;
-      font-weight: 600
+      line-height: 1.3;
+      margin-top: 50px;
+      margin-bottom: 0px;
+      font-family: $font-sans;
+    }
+    h3 {
+      font-size: 36px;
+    }
+    h2, h1 {
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 42px;
+      line-height: 1.2;
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align:left;
     }
     p {
-      line-height: 1.5;
-      font-weight: 400
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.59;
+      letter-spacing: -.002em;
+      margin-top: 30px;
+      margin-bottom: 0;
+      color: #333333;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
     }
     a {
       color: #333333;
@@ -310,11 +352,24 @@ body {
       }
     }
     ul, ol {
+      padding: 0 0 30px;
       margin: 0;
-      padding: 0 0 0 18px
     }
     li {
-      padding: 2px 0
+      padding: 0;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 23px;
+      line-height: 30px;
+      margin-left: 30px;
+      margin-bottom: 12px;
+      padding-top: 2px;
+      p {
+        padding: 0 0 golden-ratio(1rem, 1);
+      }
+    }
+    ol li {
+      list-style-type: decimal;
     }
   }
   .bottom-teaser {
@@ -439,21 +494,26 @@ body {
   }
 }
 
+
+pre,
 code {
-  color: #444;
-  margin: 0 5px;
-  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eeeeff;
+}
+
+code {
+  padding: 1px 5px;
 }
 
 pre {
+  padding: 8px 12px;
+  overflow-x: scroll;
   > code {
-    display: block;
-    overflow-x: auto;
-    color: #f3f3f3;
-    background: none repeat scroll 0% 0% #444;
-    margin: 15px 0;
-    font-weight: normal;
-    padding: 5px 15px;
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 

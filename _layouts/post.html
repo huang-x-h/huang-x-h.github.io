@@ -11,6 +11,14 @@ layout: default
       <a name="topofpage"></a>
       {{content}}
     </section>
+    <footer class="post-footer">
+      <section class="share">
+        <a class="icon" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.id }}&text={{page.title | cgi_escape}}&via={{ site.twitter_username }}" target="_blank">
+          Share on
+          {% include icon-twitter.html %}
+        </a>
+      </section>
+    </footer>
     <div class="bottom-teaser cf">
       <div class="isLeft">
         <h5 class="index-headline featured"><span>Written by</span></h5>
@@ -25,8 +33,7 @@ layout: default
                 {% include icon-github.html username=site.github_username %}
               {% endif %}
             </span>
-          </p>
-          <p>
+
             <span>
               {% if site.twitter_username %}
                 {% include icon-twitter.html username=site.twitter_username %}
@@ -37,7 +44,6 @@ layout: default
           <p class="published">Published <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
         </section>
       </div>
-      {{/post}}
       <div class="isRight">
         <h5 class="index-headline featured"><span>Supported by</span></h5>
         <footer class="site-footer">
@@ -49,7 +55,6 @@ layout: default
         </footer>
       </div>
     </div>
-
     {% if page.comments %}
     <div id="disqus_thread"></div>
     <script>
