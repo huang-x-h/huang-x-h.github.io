@@ -737,7 +737,7 @@ new Promise(function (resolve, reject) {
 })
 ```
 
-![Promsie](/assets/images/js-promise.svg)
+![Promsie](/assets/images/posts/js-promise.svg)
 
 示例
 
