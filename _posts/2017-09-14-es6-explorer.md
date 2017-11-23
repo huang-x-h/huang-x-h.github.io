@@ -9,6 +9,41 @@ tags: javascript
 
 <!-- more -->
 
+目录
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [块作用域 (let | const)](#%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F-let--const)
+  - [let](#let)
+  - [const 常量](#const-%E5%B8%B8%E9%87%8F)
+- [解构](#%E8%A7%A3%E6%9E%84)
+  - [对象解构](#%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84)
+  - [数组解构](#%E6%95%B0%E7%BB%84%E8%A7%A3%E6%9E%84)
+- [箭头函数](#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
+- [参数处理](#%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86)
+- [符号 Symbol](#%E7%AC%A6%E5%8F%B7-symbol)
+  - [特性](#%E7%89%B9%E6%80%A7)
+  - [方法](#%E6%96%B9%E6%B3%95)
+  - [内置 `Symbol`](#%E5%86%85%E7%BD%AE-symbol)
+- [类 Class](#%E7%B1%BB-class)
+- [模块 Module](#%E6%A8%A1%E5%9D%97-module)
+- [模版字符串 Template strings](#%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2-template-strings)
+  - [语法](#%E8%AF%AD%E6%B3%95)
+  - [标签模版字符串 Tagged template literals](#%E6%A0%87%E7%AD%BE%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2-tagged-template-literals)
+- [Proxy 代理](#proxy-%E4%BB%A3%E7%90%86)
+  - [语法](#%E8%AF%AD%E6%B3%95-1)
+- [Reflect 反射](#reflect-%E5%8F%8D%E5%B0%84)
+- [Generator](#generator)
+- [Promise](#promise)
+- [Map／Set／WeakMap／WeakSet](#map%EF%BC%8Fset%EF%BC%8Fweakmap%EF%BC%8Fweakset)
+  - [Map 键值对集合](#map-%E9%94%AE%E5%80%BC%E5%AF%B9%E9%9B%86%E5%90%88)
+  - [Set 存储唯一值集合](#set-%E5%AD%98%E5%82%A8%E5%94%AF%E4%B8%80%E5%80%BC%E9%9B%86%E5%90%88)
+  - [WeakMap 弱引用键键值对集合](#weakmap-%E5%BC%B1%E5%BC%95%E7%94%A8%E9%94%AE%E9%94%AE%E5%80%BC%E5%AF%B9%E9%9B%86%E5%90%88)
+  - [WeakSet 弱引用集合](#weakset-%E5%BC%B1%E5%BC%95%E7%94%A8%E9%9B%86%E5%90%88)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 块作用域 (let | const)
 
 ### let
