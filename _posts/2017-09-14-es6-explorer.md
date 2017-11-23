@@ -10,11 +10,8 @@ tags: javascript
 <!-- more -->
 
 目录
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
-- [块作用域 (let | const)](#%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F-let--const)
+- [块作用域](#%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F-let--const)
   - [let](#let)
   - [const 常量](#const-%E5%B8%B8%E9%87%8F)
 - [解构](#%E8%A7%A3%E6%9E%84)
@@ -41,8 +38,6 @@ tags: javascript
   - [Set 存储唯一值集合](#set-%E5%AD%98%E5%82%A8%E5%94%AF%E4%B8%80%E5%80%BC%E9%9B%86%E5%90%88)
   - [WeakMap 弱引用键键值对集合](#weakmap-%E5%BC%B1%E5%BC%95%E7%94%A8%E9%94%AE%E9%94%AE%E5%80%BC%E5%AF%B9%E9%9B%86%E5%90%88)
   - [WeakSet 弱引用集合](#weakset-%E5%BC%B1%E5%BC%95%E7%94%A8%E9%9B%86%E5%90%88)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 块作用域 (let | const)
 
